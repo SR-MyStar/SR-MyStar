@@ -1,0 +1,8 @@
+CompileFlags:
+    Add: [
+             '-xc++',
+             '-std=c++2a',
+             '-Wall',
+             '-Wextra',
+             '-pedantic',
+         ]
