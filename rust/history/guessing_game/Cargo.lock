@@ -80,6 +80,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "guessing_game"
+version = "0.1.0"
+dependencies = [
+ "dialoguer",
+ "rand",
+]
+
+[[package]]
 name = "lazy_static"
 version = "1.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -201,14 +209,6 @@ dependencies = [
  "redox_syscall",
  "rustix",
  "windows-sys 0.48.0",
-]
-
-[[package]]
-name = "test_app"
-version = "0.1.0"
-dependencies = [
- "dialoguer",
- "rand",
 ]
 
 [[package]]
