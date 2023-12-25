@@ -1,10 +1,10 @@
 [package]
-name = "guessing_game"
+name = "my_binary_package"
 version = "0.1.0"
+authors = ["SR-MyStar <yanwenz@gmail.com>"]
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-dialoguer = "0.11.0"
 rand = "0.8.5"

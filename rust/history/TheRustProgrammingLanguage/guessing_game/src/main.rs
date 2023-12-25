@@ -9,17 +9,17 @@ fn main() {
     loop {
         let guess: u8 = match Input::new()
             .with_prompt("输入一个1-100之间的数字")
-            .interact_text()
+            .interact()
         {
-            Err(_) => continue,
             Ok(input) => input,
+            Err(_) => continue,
         };
         count += 1;
         match guess.cmp(&number) {
             Ordering::Less => println!("小了！"),
             Ordering::Greater => println!("大了！"),
             Ordering::Equal => {
-                println!("恭喜你获胜！共用{}次", count);
+                println!("恭喜你获胜！共用{count}次");
                 break;
             }
         };
