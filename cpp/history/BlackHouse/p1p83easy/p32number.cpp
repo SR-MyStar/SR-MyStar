@@ -13,7 +13,7 @@ int main() {
 
     cout << "生成完毕\n" << endl;
 
-    short in;
+    short     in;
     long long count = 1;
 
     cout << "游戏开始！" << endl;

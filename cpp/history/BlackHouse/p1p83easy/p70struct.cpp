@@ -3,21 +3,21 @@ using namespace std;
 
 struct Student {
     string Name;
-    int Scores;
+    int    Scores;
 };
 
 struct Teacher {
-    string Name;
+    string  Name;
     Student Stu[5];
 };
 
 void test(Teacher *Ptr, int Width) {
     string Str = "ABCDE";
     for (int J = 0; J < Width; J++) {
-        Ptr[J].Name = "Teacher_";
+        Ptr[J].Name  = "Teacher_";
         Ptr[J].Name += Str[J];
         for (int I = 0; I < 5; I++) {
-            Ptr[J].Stu[I].Name = "Student_";
+            Ptr[J].Stu[I].Name  = "Student_";
             Ptr[J].Stu[I].Name += Str[I];
             srand(time(NULL));
             Ptr[J].Stu[I].Scores = rand() % 61 + 40;

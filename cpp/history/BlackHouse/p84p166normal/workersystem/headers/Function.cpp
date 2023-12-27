@@ -8,8 +8,8 @@ void WorkerManager::AddSomeWorker() {
     cin >> addQuantity;
 
     if (addQuantity > 0) {
-        long long newSize = this->m_WorkerNum + addQuantity;
-        Worker **newSpace = new Worker *[newSize];
+        long long newSize  = this->m_WorkerNum + addQuantity;
+        Worker  **newSpace = new Worker *[newSize];
 
         if (this->m_WorkerArray != NULL) {
             for (long long index = 0; index < this->m_WorkerNum; index++) {
@@ -27,7 +27,7 @@ void WorkerManager::AddSomeWorker() {
         }
 
         this->m_WorkerArray = newSpace;
-        this->m_WorkerNum = newSize;
+        this->m_WorkerNum   = newSize;
         this->m_FileIsEmpty = false;
 
         cout << "成功添加" << addQuantity << "名新员工!" << endl;
@@ -294,7 +294,7 @@ void WorkerManager::ClearFile() {
         this->m_fout.close();
         this->DeleteWorkerArray();
         this->m_FileIsEmpty = true;
-        this->m_WorkerNum = 0;
+        this->m_WorkerNum   = 0;
         cout << "已完成" << endl;
     } else {
         cout << "取消清空" << endl;

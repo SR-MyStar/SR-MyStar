@@ -1,3 +1,4 @@
+// -*- C++ -*-
 #pragma once
 #include "BossWorker.h"
 #include "EmployeeWorker.h"

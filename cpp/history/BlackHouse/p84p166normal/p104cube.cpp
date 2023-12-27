@@ -10,18 +10,20 @@ public:
         c_L = Length;
         c_W = Width;
     }
-    double calcS() { return 2 * (c_L * c_W + c_W * c_H + c_L * c_H); }
-    double calcV() { return c_L * c_W * c_H; }
+    double calcS() {
+        return 2 * (c_L * c_W + c_W * c_H + c_L * c_H);
+    }
+    double calcV() {
+        return c_L * c_W * c_H;
+    }
     double getCube(char getOpts) {
-        if (getOpts == 'H')
-            return c_H;
-        if (getOpts == 'W')
-            return c_W;
+        if (getOpts == 'H') return c_H;
+        if (getOpts == 'W') return c_W;
         return c_L;
     }
     bool cubeSame(Cube &cubeName2) {
-        if (c_L == cubeName2.c_L && c_W == cubeName2.c_W &&
-            c_H == cubeName2.c_H) {
+        if (c_L == cubeName2.c_L && c_W == cubeName2.c_W
+            && c_H == cubeName2.c_H) {
             return true;
         }
         return false;
@@ -29,9 +31,9 @@ public:
 };
 
 bool isSame(Cube &cubeName0, Cube &cubeName1) {
-    if (cubeName0.getCube('H') == cubeName1.getCube('H') &&
-        cubeName0.getCube('L') == cubeName1.getCube('L') &&
-        cubeName0.getCube('W') == cubeName1.getCube('W')) {
+    if (cubeName0.getCube('H') == cubeName1.getCube('H')
+        && cubeName0.getCube('L') == cubeName1.getCube('L')
+        && cubeName0.getCube('W') == cubeName1.getCube('W')) {
         return true;
     }
     return false;

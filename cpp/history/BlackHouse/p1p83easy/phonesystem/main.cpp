@@ -11,33 +11,19 @@ int main(int argc, char *argv[]) {
         cin >> Select;
 
         switch (Select) {
-        case 1:
-            addPerson(&Ars);
-            break;
+            case 1: addPerson(&Ars); break;
 
-        case 2:
-            showPerson(&Ars);
-            break;
+            case 2: showPerson(&Ars); break;
 
-        case 3:
-            deletePerson(&Ars);
-            break;
+            case 3: deletePerson(&Ars); break;
 
-        case 4:
-            findPerson(&Ars);
-            break;
+            case 4: findPerson(&Ars); break;
 
-        case 5:
-            modifyPerson(&Ars);
-            break;
+            case 5: modifyPerson(&Ars); break;
 
-        case 6:
-            ClearAll(&Ars);
-            break;
+            case 6: ClearAll(&Ars); break;
 
-        default:
-            exit(0);
-            break;
+            default: exit(0); break;
         }
     }
     return 0;

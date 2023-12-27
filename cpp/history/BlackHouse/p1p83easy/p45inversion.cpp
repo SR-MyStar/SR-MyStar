@@ -10,16 +10,16 @@ int main(int argc, char *argv[]) {
         cout << Arr[Start] << ",";
     }
 
-    int End = sizeof(Arr) / sizeof(Arr[0]) - 1;
+    int End   = sizeof(Arr) / sizeof(Arr[0]) - 1;
     int Start = 0;
     int Temp;
 
     for (; Start <= End;) {
-        Temp = Arr[Start];
-        Arr[Start] = Arr[End];
-        Arr[End] = Temp;
-        Start += 1;
-        End -= 1;
+        Temp        = Arr[Start];
+        Arr[Start]  = Arr[End];
+        Arr[End]    = Temp;
+        Start      += 1;
+        End        -= 1;
     }
 
     cout << endl << "逆置后：" << endl;

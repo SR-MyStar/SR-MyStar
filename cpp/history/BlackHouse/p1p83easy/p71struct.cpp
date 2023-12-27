@@ -3,7 +3,7 @@ using namespace std;
 
 struct Heros {
     string Name;
-    int Age;
+    int    Age;
     string Sex;
 };
 
@@ -25,8 +25,11 @@ void bubbleSort(Heros *ArrName, bool AscendingSort, int ArrWidth) {
 
 int main(int argc, char *argv[]) {
     Heros Heros[5] = {
-        {"刘备", 23, "男"}, {"关羽", 22, "男"}, {"张飞", 20, "男"},
-        {"赵云", 21, "男"}, {"貂蝉", 19, "女"},
+        {"刘备", 23, "男"},
+        {"关羽", 22, "男"},
+        {"张飞", 20, "男"},
+        {"赵云", 21, "男"},
+        {"貂蝉", 19, "女"},
     };
     bubbleSort(Heros, true, 5);
     for (int I = 0; I < 5; I++) {

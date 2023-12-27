@@ -12,14 +12,14 @@ class Player {
 public:
     Player() = default;
     Player(string name, double score) {
-        this->m_Name = name;
+        this->m_Name  = name;
         this->m_Score = score;
     }
-    Player(Player &&) = default;
-    Player(const Player &) = default;
-    Player &operator=(Player &&) = default;
+    Player(Player &&)                 = default;
+    Player(const Player &)            = default;
+    Player &operator=(Player &&)      = default;
     Player &operator=(const Player &) = default;
-    ~Player() = default;
+    ~Player()                         = default;
 
     string m_Name;
     double m_Score;

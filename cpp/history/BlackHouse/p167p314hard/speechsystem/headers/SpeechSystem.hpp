@@ -34,7 +34,8 @@ public:
         this->KeepPromotionPlayers();
         this->ShowSecondResults();
         this->Scoreing(this->playersThirdGroup);
-        std::sort(this->playersThirdGroup.begin(), this->playersThirdGroup.end(),
+        std::sort(this->playersThirdGroup.begin(),
+                  this->playersThirdGroup.end(),
                   [&](Player &player1, Player &player2) -> bool {
                       return player1.avgScore > player2.avgScore;
                   });
@@ -54,13 +55,13 @@ public:
         std::cout << "---------------------------------------------------------"
                      "\n第1届：\n";
         unsigned long long i = 1, j = 0;
-        std::string str_line;
+        std::string        str_line;
         while (getline(fin, str_line, ',')) {
-            std::string str_tmp;
+            std::string       str_tmp;
             std::stringstream ss(str_line);
             while (ss >> str_tmp) {
                 std::cout << str_tmp;
-                std::regex str_reg("(1000[1-9])|(1001[0-2])");
+                std::regex  str_reg("(1000[1-9])|(1001[0-2])");
                 std::smatch result;
                 ++j;
                 if (j == 6) {
@@ -76,8 +77,9 @@ public:
             }
         }
         this->fin.close();
-        std::cout << "待开始...\n--------------------------------------------------"
-                     "-------\n";
+        std::cout
+            << "待开始...\n--------------------------------------------------"
+               "-------\n";
         std::cin.get();
         this->PauseClear();
     }
@@ -105,14 +107,15 @@ private:
 
     void Init() {
         playersFirstGroup = {
-            10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008, 10009, 10010, 10011, 10012,
+            10001, 10002, 10003, 10004, 10005, 10006,
+            10007, 10008, 10009, 10010, 10011, 10012,
         };
     }
 
     // PASSED: Scoreing
     template <typename T> void Scoreing(T &players) {
         std::uniform_int_distribution<> dist(100, 10000);
-        std::mt19937 randomValue(std::random_device{}());
+        std::mt19937                    randomValue(std::random_device{}());
         for (Player &player : players) {
             std::multiset<float> scores;
             for (char j = 0; j < 10; ++j) {
@@ -129,7 +132,8 @@ private:
     }
 
     void RandomShuffle() {
-        std::shuffle(this->playersFirstGroup.begin(), this->playersFirstGroup.end(),
+        std::shuffle(this->playersFirstGroup.begin(),
+                     this->playersFirstGroup.end(),
                      std::mt19937{std::random_device{}()});
         for (char i = 0; i < 6; ++i) {
             this->playersSecondGroup[0][i] = this->playersFirstGroup[i];
@@ -140,8 +144,9 @@ private:
     }
 
     void Grouping() {
-        std::cout << "\n分组结果：\n-----------------------------------------------"
-                     "----------\n";
+        std::cout
+            << "\n分组结果：\n-----------------------------------------------"
+               "----------\n";
         for (char i = 0; i < 2; ++i) {
             std::cout << "第" << (short)i + 1 << "组：\n";
             for (auto &var0 : this->playersSecondGroup[i]) {
@@ -156,8 +161,9 @@ private:
     }
 
     void GetAvgScore() {
-        std::cout << "\n第1轮比赛结果：\n------------------------------------------"
-                     "---------------\n";
+        std::cout
+            << "\n第1轮比赛结果：\n------------------------------------------"
+               "---------------\n";
         for (char i = 0; i < 2; ++i) {
             this->Scoreing(this->playersSecondGroup[i]);
             std::cout << "第" << (short)i + 1 << "组：\n";
@@ -172,22 +178,26 @@ private:
 
     void SortArray() {
         for (auto &var : this->playersSecondGroup) {
-            std::sort(var.begin(), var.end(), [&](Player &player1, Player &player2) -> bool {
-                return player1.avgScore > player2.avgScore;
-            });
+            std::sort(var.begin(), var.end(),
+                      [&](Player &player1, Player &player2) -> bool {
+                          return player1.avgScore > player2.avgScore;
+                      });
         }
     }
 
     void KeepPromotionPlayers() {
-        std::cout << "晋级选手：\n-------------------------------------------------"
-                     "--------\n";
+        std::cout
+            << "晋级选手：\n-------------------------------------------------"
+               "--------\n";
         for (char i = 0; i < 2; ++i) {
             std::cout << "第" << (short)i + 1 << "组：\n";
             for (char j = 0; j < 3; ++j) {
                 if (i == 1) {
-                    this->playersThirdGroup[j + 3] = this->playersSecondGroup[i][j];
+                    this->playersThirdGroup[j + 3] =
+                        this->playersSecondGroup[i][j];
                     std::cout << this->playersThirdGroup[j + 3].ID << ' '
-                              << this->playersThirdGroup[j + 3].avgScore << '\n';
+                              << this->playersThirdGroup[j + 3].avgScore
+                              << '\n';
                 } else {
                     this->playersThirdGroup[j] = this->playersSecondGroup[i][j];
                     std::cout << this->playersThirdGroup[j].ID << ' '
@@ -201,8 +211,9 @@ private:
     }
 
     void ShowSecondResults() {
-        std::cout << "\n第2轮比赛结果：\n------------------------------------------"
-                     "---------------\n";
+        std::cout
+            << "\n第2轮比赛结果：\n------------------------------------------"
+               "---------------\n";
         for (auto &var0 : this->playersThirdGroup) {
             std::cout << var0.ID << " 分数" << var0.avgScore << '\n';
         }
@@ -212,23 +223,25 @@ private:
     }
 
     void ShowAndWritingResultsToFile() {
-        std::cout << "最终结果：\n冠军：" << this->playersThirdGroup[0].ID << " 分数："
-                  << this->playersThirdGroup[0].avgScore << "\n亚军："
-                  << this->playersThirdGroup[1].ID << " 分数："
+        std::cout << "最终结果：\n冠军：" << this->playersThirdGroup[0].ID
+                  << " 分数：" << this->playersThirdGroup[0].avgScore
+                  << "\n亚军：" << this->playersThirdGroup[1].ID << " 分数："
                   << this->playersThirdGroup[1].avgScore << "\n季军："
                   << this->playersThirdGroup[2].ID << " 分数："
                   << this->playersThirdGroup[2].avgScore << '\n';
         this->fout.open(".seepchhistory.csv", std::ios::app);
-        fout << this->playersThirdGroup[0].ID << ',' << this->playersThirdGroup[0].avgScore << ",\n"
-             << this->playersThirdGroup[1].ID << ',' << this->playersThirdGroup[1].avgScore << ",\n"
-             << this->playersThirdGroup[2].ID << ',' << this->playersThirdGroup[2].avgScore
-             << ",\n\n";
+        fout << this->playersThirdGroup[0].ID << ','
+             << this->playersThirdGroup[0].avgScore << ",\n"
+             << this->playersThirdGroup[1].ID << ','
+             << this->playersThirdGroup[1].avgScore << ",\n"
+             << this->playersThirdGroup[2].ID << ','
+             << this->playersThirdGroup[2].avgScore << ",\n\n";
         fout.close();
     }
 
-    std::ifstream fin;
-    std::ofstream fout;
-    std::array<Player, 12> playersFirstGroup;
+    std::ifstream                        fin;
+    std::ofstream                        fout;
+    std::array<Player, 12>               playersFirstGroup;
     std::array<std::array<Player, 6>, 2> playersSecondGroup;
-    std::array<Player, 6> playersThirdGroup;
+    std::array<Player, 6>                playersThirdGroup;
 };

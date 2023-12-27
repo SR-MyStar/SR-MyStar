@@ -1,3 +1,4 @@
+// -*- C++ -*-
 #pragma once
 #include "Worker/AllWorker.h"
 #include "headers.h"
@@ -18,8 +19,8 @@ public:
     void ClearFile();
 
     long long m_WorkerNum;
-    Worker **m_WorkerArray;
-    bool m_FileIsEmpty;
+    Worker  **m_WorkerArray;
+    bool      m_FileIsEmpty;
 
     ifstream m_fin;
     ofstream m_fout;
@@ -28,15 +29,15 @@ public:
 
 protected:
     long long GetWorkerNum();
-    void InitWorkerArray();
+    void      InitWorkerArray();
 
-    void PauseClear();
-    void SaveFile();
+    void      PauseClear();
+    void      SaveFile();
     long long IsExist(long long ID);
-    void IsExistName(string name);
-    void SelectSort(bool AscendingSort);
-    void AddWorker(long long arrayIndex, Worker **workerGroupName,
-                   long long count);
+    void      IsExistName(string name);
+    void      SelectSort(bool AscendingSort);
+    void      AddWorker(long long arrayIndex, Worker **workerGroupName,
+                        long long count);
 
     void DeleteWorkerArray();
 };

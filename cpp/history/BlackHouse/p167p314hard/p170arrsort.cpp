@@ -14,7 +14,7 @@ template <typename T> void SelectSort(T &arrName) {
 
 int main(int argc, char *argv[]) {
     char c_A[] = "abcaeb";
-    int i_B[] = {1, 1, 4, 5, 1, 4};
+    int  i_B[] = {1, 1, 4, 5, 1, 4};
     SelectSort(c_A);
     SelectSort(i_B);
     cout << c_A << endl;

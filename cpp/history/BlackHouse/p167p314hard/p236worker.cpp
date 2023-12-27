@@ -9,12 +9,14 @@ using namespace std;
 class Worker {
 public:
     Worker(const string name, const short salary) {
-        this->m_Name = name;
+        this->m_Name   = name;
         this->m_Salary = salary;
     }
     string m_Name;
-    short m_Salary;
-    bool operator<(Worker worker) const { return this->m_Name < worker.m_Name; }
+    short  m_Salary;
+    bool   operator<(Worker worker) const {
+        return this->m_Name < worker.m_Name;
+    }
 };
 
 void PrintWorkers(const multimap<short, Worker> &mapName) {

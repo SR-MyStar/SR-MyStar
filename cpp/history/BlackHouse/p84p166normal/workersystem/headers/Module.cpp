@@ -115,15 +115,15 @@ void WorkerManager::SelectSort(bool AscendingSort) {
         long long minOrMax = Count0;
         for (long long Count1 = Index; Count1 < this->m_WorkerNum; Count1++) {
             if (AscendingSort) {
-                minOrMax = (this->m_WorkerArray[minOrMax]->m_ID >
-                            this->m_WorkerArray[Count1]->m_ID)
-                               ? Count1
-                               : minOrMax;
+                minOrMax = (this->m_WorkerArray[minOrMax]->m_ID
+                            > this->m_WorkerArray[Count1]->m_ID)
+                             ? Count1
+                             : minOrMax;
             } else {
-                minOrMax = (this->m_WorkerArray[minOrMax]->m_ID <
-                            this->m_WorkerArray[Count1]->m_ID)
-                               ? Count1
-                               : minOrMax;
+                minOrMax = (this->m_WorkerArray[minOrMax]->m_ID
+                            < this->m_WorkerArray[Count1]->m_ID)
+                             ? Count1
+                             : minOrMax;
             }
         }
         if (Count0 != minOrMax) {

@@ -7,8 +7,9 @@ int main() {
     do {
         argc = (argc1 * 100) + (argc2 * 10) + (argc3);
 
-        if ((argc1 * argc1 * argc1 + argc2 * argc2 * argc2 +
-             argc3 * argc3 * argc3) == argc) {
+        if ((argc1 * argc1 * argc1 + argc2 * argc2 * argc2
+             + argc3 * argc3 * argc3)
+            == argc) {
             count++;
             cout << argc << "是水仙花数" << endl;
         }

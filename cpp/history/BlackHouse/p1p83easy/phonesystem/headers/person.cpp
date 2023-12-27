@@ -8,8 +8,7 @@ void ClearSceen() {
 }
 
 void addPerson(Addressbooks *AddressbooksName) {
-    if (AddressbooksName->Size == MAX)
-        cout << "通讯录已满" << endl;
+    if (AddressbooksName->Size == MAX) cout << "通讯录已满" << endl;
     else {
 
         cout << "名字：";
@@ -19,8 +18,8 @@ void addPerson(Addressbooks *AddressbooksName) {
     Sex:
         cout << "性别（1=男，0=女）：";
         cin >> AddressbooksName->personArr[AddressbooksName->Size].Sex;
-        if (AddressbooksName->personArr[AddressbooksName->Size].Sex != 0 &&
-            AddressbooksName->personArr[AddressbooksName->Size].Sex != 1) {
+        if (AddressbooksName->personArr[AddressbooksName->Size].Sex != 0
+            && AddressbooksName->personArr[AddressbooksName->Size].Sex != 1) {
             cout << "你这性别太假了，请重新输入" << endl;
             goto Sex;
         }
@@ -29,8 +28,8 @@ void addPerson(Addressbooks *AddressbooksName) {
     Age:
         cout << "年龄：";
         cin >> AddressbooksName->personArr[AddressbooksName->Size].Age;
-        if (AddressbooksName->personArr[AddressbooksName->Size].Age < 1 ||
-            AddressbooksName->personArr[AddressbooksName->Size].Age > 150) {
+        if (AddressbooksName->personArr[AddressbooksName->Size].Age < 1
+            || AddressbooksName->personArr[AddressbooksName->Size].Age > 150) {
             cout << "你这年龄太假了，请重新输入" << endl;
             goto Age;
         }
@@ -75,8 +74,7 @@ void showPerson(Addressbooks *AddressbooksName) {
 
 int isExist(Addressbooks *AddressbooksName, string i_Name) {
     for (int i = 0; i < AddressbooksName->Size; i++) {
-        if (AddressbooksName->personArr[i].Name == i_Name)
-            return i;
+        if (AddressbooksName->personArr[i].Name == i_Name) return i;
     }
     return -1;
 }
@@ -86,10 +84,9 @@ void deletePerson(Addressbooks *AddressbooksName) {
     cout << "请输入姓名：";
     cin >> d_Name;
     int d_Ret = isExist(AddressbooksName, d_Name);
-    if (d_Ret == -1)
-        cout << "查无此人" << endl;
-    else if (AddressbooksName->Size == 1000 &&
-             AddressbooksName->Size - 1 == d_Ret + 1) {
+    if (d_Ret == -1) cout << "查无此人" << endl;
+    else if (AddressbooksName->Size == 1000
+             && AddressbooksName->Size - 1 == d_Ret + 1) {
         AddressbooksName->Size--;
     } else {
         for (int i = d_Ret; i < AddressbooksName->Size; i++) {
@@ -114,8 +111,7 @@ void findPerson(Addressbooks *AddressbooksName) {
     string f_Name;
     cin >> f_Name;
     int f_Ret = isExist(AddressbooksName, f_Name);
-    if (f_Ret == -1)
-        cout << "查无此人" << endl;
+    if (f_Ret == -1) cout << "查无此人" << endl;
     else {
         cout << "姓名\t\t\t性别\t\t\t年龄\t\t\t电话\t\t\t住址" << endl
              << "--------------------------------------------------------------"
@@ -139,8 +135,7 @@ void modifyPerson(Addressbooks *AddressbooksName) {
     string m_Name;
     cin >> m_Name;
     int m_Ret = isExist(AddressbooksName, m_Name);
-    if (m_Ret == -1)
-        cout << "查无此人" << endl;
+    if (m_Ret == -1) cout << "查无此人" << endl;
     else {
 
     Select:
@@ -157,8 +152,8 @@ void modifyPerson(Addressbooks *AddressbooksName) {
         Sex:
             cout << "性别（1=男，0=女）：";
             cin >> AddressbooksName->personArr[m_Ret].Sex;
-            if (AddressbooksName->personArr[m_Ret].Sex != 0 &&
-                AddressbooksName->personArr[m_Ret].Sex != 1) {
+            if (AddressbooksName->personArr[m_Ret].Sex != 0
+                && AddressbooksName->personArr[m_Ret].Sex != 1) {
                 cout << "你这性别太假了，请重新输入" << endl;
                 goto Sex;
             }
@@ -168,8 +163,8 @@ void modifyPerson(Addressbooks *AddressbooksName) {
         Age:
             cout << "年龄：";
             cin >> AddressbooksName->personArr[m_Ret].Age;
-            if (AddressbooksName->personArr[m_Ret].Age < 1 ||
-                AddressbooksName->personArr[m_Ret].Age > 150) {
+            if (AddressbooksName->personArr[m_Ret].Age < 1
+                || AddressbooksName->personArr[m_Ret].Age > 150) {
                 cout << "你这年龄太假了，请重新输入" << endl;
                 goto Age;
             }

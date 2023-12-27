@@ -11,10 +11,10 @@ int main(int argc, char *argv[]) {
       }
     */
 
-    int Max = 0;
+    int    Max = 0;
     double Max0;
     for (int count = 0; count < 5; count++) {
-        Max = (Arr[Max] > Arr[Max + 1]) ? (Max) : (Max + 1);
+        Max  = (Arr[Max] > Arr[Max + 1]) ? (Max) : (Max + 1);
         Max0 = (Arr[Max] > Arr[Max + 1]) ? (Arr[Max]) : (Arr[Max + 1]);
     }
 

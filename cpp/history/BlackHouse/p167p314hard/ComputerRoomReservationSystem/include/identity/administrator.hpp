@@ -19,7 +19,8 @@ class administrator {
 public:
     administrator() = delete;
     administrator(const std::string &name, const std::string &password) noexcept
-        : m_name(name), m_password(password) {}
+        : m_name(name)
+        , m_password(password) {}
     administrator(administrator &&)                 = delete;
     administrator(const administrator &)            = delete;
     administrator &operator=(administrator &&)      = delete;
@@ -55,8 +56,9 @@ public:
         while (true) {
             std::cout << "\n请选择添加的账号类型:";
             std::cin >> userSelect;
-            if (std::cin && (userSelect == 0 || userSelect == 1 ||
-                             userSelect == 2 || userSelect == 3)) {
+            if (std::cin
+                && (userSelect == 0 || userSelect == 1 || userSelect == 2
+                    || userSelect == 3)) {
                 break;
             }
             std::cerr << "ERROR: 无效，请重新选择\n";
@@ -162,8 +164,9 @@ public:
             << "1.学生\n2.教师\n3.管理员\n0.返回\n你要查看哪种类型的账号:";
         std::cin >> userSelect;
         while (true) {
-            if (std::cin && (userSelect == 0 || userSelect == 1 ||
-                             userSelect == 2 || userSelect == 3)) {
+            if (std::cin
+                && (userSelect == 0 || userSelect == 1 || userSelect == 2
+                    || userSelect == 3)) {
                 break;
             }
             std::cerr << "ERROR: 无效输入\n";

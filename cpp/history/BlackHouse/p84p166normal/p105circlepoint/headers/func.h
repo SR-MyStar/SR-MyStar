@@ -1,3 +1,4 @@
+// -*- C++ -*-
 #include "circle.h"
 #include "headers.h"
 

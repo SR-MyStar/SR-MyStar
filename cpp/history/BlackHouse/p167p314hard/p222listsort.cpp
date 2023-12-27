@@ -9,13 +9,13 @@ using namespace std;
 class Person {
 public:
     Person(string name, int age, int height) {
-        this->m_Name = name;
-        this->m_Age = age;
+        this->m_Name   = name;
+        this->m_Age    = age;
         this->m_Height = height;
     }
 
     string m_Name;
-    short m_Age, m_Height;
+    short  m_Age, m_Height;
 };
 
 void PrintList(const list<Person> &persons) {
@@ -27,9 +27,9 @@ void PrintList(const list<Person> &persons) {
 
 void InitPerson(list<Person> &persons, string name = "人", short num = 5) {
     for (short i = 0; i < num; i++) {
-        char a = i;
-        string temp = name;
-        name += a ^ 48;
+        char   a     = i;
+        string temp  = name;
+        name        += a ^ 48;
         persons.push_back(Person(name, rand() % 61 + 10, rand() % 41 + 160));
         name = temp;
     }

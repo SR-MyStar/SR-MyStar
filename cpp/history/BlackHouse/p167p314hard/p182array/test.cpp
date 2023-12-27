@@ -7,7 +7,7 @@ public:
 
 int main(int argc, char *argv[]) {
     Array<o> a(6);
-    o o0;
+    o        o0;
     for (int i = 0; i < a.Lenger(); i++) {
         a.Add(o0);
     }

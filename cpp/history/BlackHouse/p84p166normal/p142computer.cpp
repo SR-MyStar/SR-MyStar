@@ -20,41 +20,55 @@ public:
 
 class IntelCPU : public CPU {
 public:
-    virtual void calc() { cout << "Intel CPU working.." << endl; }
+    virtual void calc() {
+        cout << "Intel CPU working.." << endl;
+    }
 };
 class IntelGPU : public GPU {
 public:
-    virtual void show() { cout << "Intel GPU working.." << endl; }
+    virtual void show() {
+        cout << "Intel GPU working.." << endl;
+    }
 };
 class IntelDisk : public Disk {
 public:
-    virtual void storage() { cout << "Intel Disk working.." << endl; }
+    virtual void storage() {
+        cout << "Intel Disk working.." << endl;
+    }
 };
 class IntelMemory : public Memory {
 public:
-    virtual void cache() { cout << "Intel Memory working.." << endl; }
+    virtual void cache() {
+        cout << "Intel Memory working.." << endl;
+    }
 };
 
 class AMDCPU : public CPU {
 public:
-    virtual void calc() { cout << "AMD CPU working.." << endl; }
+    virtual void calc() {
+        cout << "AMD CPU working.." << endl;
+    }
 };
 class AMDGPU : public GPU {
 public:
-    virtual void show() { cout << "AMD GPU working.." << endl; }
+    virtual void show() {
+        cout << "AMD GPU working.." << endl;
+    }
 };
 
 class NvidiaGPU : public GPU {
 public:
-    virtual void show() { cout << "Nvidia GPU working.." << endl; }
+    virtual void show() {
+        cout << "Nvidia GPU working.." << endl;
+    }
 };
 
 class Computer {
 public:
     Computer(CPU *CPU, GPU *GPU, Disk *Disk, Memory *Memory) {
-        computerCPU = CPU;
-        computerGPU = GPU;
-        computerDisk = Disk;
+        computerCPU    = CPU;
+        computerGPU    = GPU;
+        computerDisk   = Disk;
         computerMemory = Memory;
     }
     void ComputerWork() {
@@ -63,9 +77,9 @@ public:
         computerDisk->storage();
         computerMemory->cache();
     }
-    CPU *computerCPU;
-    GPU *computerGPU;
-    Disk *computerDisk;
+    CPU    *computerCPU;
+    GPU    *computerGPU;
+    Disk   *computerDisk;
     Memory *computerMemory;
     ~Computer() {
         if (computerCPU != NULL) {
