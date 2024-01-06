@@ -1,17 +1,17 @@
-use std::fmt::Display;
-
-fn main() {
-    unimplemented!();
+trait TT {
+    fn m(&self) {}
 }
 
-fn longest_with_an_announcement<'a, T>(x: &'a str, y: &'a str, ann: T) -> &'a str
-where
-    T: Display,
-{
-    println!("Announcement! {}", ann);
-    if x.len() > y.len() {
-        x
-    } else {
-        y
-    }
+struct A;
+impl TT for A {}
+
+struct B;
+impl TT for B {}
+
+fn r1<T: TT>(p1: T, p2: T) {}
+fn r2(p1: impl TT, p2: impl TT) {}
+
+fn main() {
+    r1(A {}, B {}); // compilation error
+    r2(A {}, B {}); // ok
 }
